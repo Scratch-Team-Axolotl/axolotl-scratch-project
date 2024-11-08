@@ -11,17 +11,17 @@
 
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import MainContainer from './containers/MainContainer.jsx';
-import Project1 from './components/Project1.jsx';
-import Project2 from './components/Project2.jsx';
+import LandingPage from './components/LandingPage.jsx';
+import IntroPage from './components/IntroPage.jsx';
+import Level1 from './components/Level1.jsx';
 
 const App = () => {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<MainContainer />} />
-        <Route path='/project1' element={<Project1 />} />
-        <Route path='/project2' element={<Project2 />} />
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/intro' element={<IntroPage />} />
+        <Route path='/level1' element={<Level1 />} />
       </Routes>
     </div>
   );
