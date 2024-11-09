@@ -1,9 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import fakeTitanic from '/Users/jeetpatel/axolotl-scratch-project/server/assets/titantic_1_ai.png';
-import realTitanic from '/Users/jeetpatel/axolotl-scratch-project/server/assets/titantic_2_real.png';
-// /Users/jeetpatel/axolotl-scratch-project/server/assets/titantic_1_ai.png
+import fakeTitanic from '/server/assets/titantic_1_ai.png';
+import realTitanic from '/server/assets/titantic_2_real.png';
 
 const IntroPage = () => {
   const navigate = useNavigate();
@@ -15,8 +14,6 @@ const IntroPage = () => {
     'Investigate both of the picture examples below and try to look for a pattern to help you. Do you notice anything that could help you differentiate between the two? ';
 
   //temporary styling
-  //added two p tags for the instructions and the tips
-  //added two images
   return (
     <div
       style={{
@@ -30,7 +27,7 @@ const IntroPage = () => {
         textAlign: 'center',
       }}
     >
-      <h1>Welcome to AImongus!</h1>
+      <h1>Welcome to AImongUs!</h1>
       <p
         //added two p tags for the instructions and the tips
         style={{
@@ -77,11 +74,19 @@ const IntroPage = () => {
       <img
         //added two images
         src={fakeTitanic}
-        style={{ width: '500px', height: '380px', marginTop: '15px' }}
+        style={{
+          width: '500px',
+          height: '380px',
+          marginTop: '15px',
+        }}
       />
       <img
         src={realTitanic}
-        style={{ width: '500px', height: '380px', marginTop: '15px' }}
+        style={{
+          width: '500px',
+          height: '380px',
+          marginTop: '15px',
+        }}
       />
     </div>
   );
