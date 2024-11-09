@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import fakeTitanic from '/Users/jeetpatel/axolotl-scratch-project/server/assets/titantic_1_ai.png';
-import realTitanic from '/Users/jeetpatel/axolotl-scratch-project/server/assets/titantic_2_real.png';
+import fakeTitanic from '../../server/assets/titantic_1_ai.png';
+import realTitanic from '../../server/assets/titantic_2_real.png';
 // /Users/jeetpatel/axolotl-scratch-project/server/assets/titantic_1_ai.png
 
 const IntroPage = () => {
