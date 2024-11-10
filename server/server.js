@@ -14,6 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from the React app build
 app.use(express.static(path.join(__dirname, '../dist')));
 
+// Serve images from the assets folder
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
 // Temporary Routes for handling Score
 app.post('/api/scores', scoresController.uploadScore);
 app.get('/api/scores/leaderboard', scoresController.getTopScores);
