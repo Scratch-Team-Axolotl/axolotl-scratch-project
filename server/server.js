@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const http = require('http');
+const scoresController = require('./controllers/scoresController');
 
 const app = express();
 const server = http.createServer(app);
@@ -12,6 +13,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from the React app build
 app.use(express.static(path.join(__dirname, '../dist')));
+
+// Temporary Routes for handling Score
+app.post('/api/scores', scoresController.uploadScore);
+app.get('/api/scores/leaderboard', scoresController.getTopScores);
 
 // Catch-all route to serve index.html for any other requests
 app.get('*', (req, res) => {
