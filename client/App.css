@@ -1,0 +1,128 @@
+/* CSS Reset - Browsers apply different default styles to elements, which can lead to inconsistent layouts. This reset ensures a clean slate. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Sets the box-sizing model to border-box for all elements, making element width and height calculations more predictable by including padding and borders in the specified width and height.  */
+}
+
+body {
+  min-height: 100vh; /* sets body's height to the entire viewport's height */
+  width: 100%; /* sets width to full parent element's (body) width; if we used vw a horizontal scroll bar will appear when height expands and requires a vertical scroll bar. This is because the vertical scroll bar takes up an additional 10px of width. */
+}
+
+/* ------- LEVEL PAGES ------- */
+.level {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  position: relative;
+  width: 35%;
+}
+
+.level-content {
+  /* If you have sidebar push this container and want a transition effect */
+  /* transition: margin-left 0.5s; */
+  height: 100%;
+  width: 100%;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+/* ------- NAVBAR COMPONENT STYLING ------- */
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 100%; /* 0 width - change this with JavaScript */
+  position: absolute; /* absolute - allows width% to be relative to parent; fixed - Stay in place but width% is relative to body Element*/
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  height: 100vh;
+  width: 100vw;
+}
+
+/* The sidebar links */
+.nav-title {
+  padding: 20px;
+  text-decoration: none;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.nav-title:hover {
+  cursor: pointer;
+  color: #b48cf3;
+}
+
+/* Position and style the close button (top right corner) */
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: white;
+}
+
+.close-btn:hover {
+  color: #b48cf3;
+  cursor: pointer;
+}
+
+/* The button used to open the navbar */
+.open-btn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  /* sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). */
+  /* position: sticky; */
+  /* must specify at least one of top, right, bottom or left for sticky positioning to work. */
+  /* top: 0; */
+  /* left: 0; */
+}
+
+.open-btn:hover {
+  color: #b48cf3;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* @media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .nav-title {
+    font-size: 18px;
+  }
+} */
+
+/* ------- SCORE PAGE STYLING ------- */
+/* .score {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+} */
