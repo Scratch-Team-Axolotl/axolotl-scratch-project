@@ -1,30 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import { FaTimes, FaBars } from 'react-icons/fa'; // can also use the 'x' and hamburger icons from the React Icons library
 
-const Navbar = () => {
-  return (
-    <div>
-      <div className='sidebar'></div>
-      //{' '}
-      <div className='sidebar' style={{ width: isNavOpen ? '250px' : '0' }}>
-        <Link className='close-btn' to='#'>
-          {/* <Link className='close-btn' to='#' onClick={handleSidebarBtn}></Link> */}
-          X
-        </Link>
+const Navbar = ({ handleSidebarBtn, isNavOpen }) => {
+  const navigate = useNavigate();
+  const gameLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-        <Link className='nav-title' to='/'>
-          Home
-        </Link>
-        <Link className='nav-title' to='/level-1'>
-          Level 1
-        </Link>
-        <Link className='nav-title' to='/score'>
-          Score Board
-        </Link>
+  return (
+    <div className='navbar'>
+      <div className='sidebar' style={{ width: isNavOpen ? '100%' : '0' }}>
+        <h1 className='close-btn' to='#' onClick={handleSidebarBtn}>
+          X
+        </h1>
+        {gameLevels.map((lvl) => {
+          return (
+            <h2 className='nav-title' onClick={() => navigate(`/level${lvl}`)}>
+              Level {lvl}
+            </h2>
+          );
+        })}
       </div>
-      {/* <button className='open-btn' onClick={handleSidebarBtn}> */}
-      <button className='open-btn'>&#9776; Open Sidebar</button>
+
+      <button className='open-btn' onClick={handleSidebarBtn}>
+        &#9776;
+      </button>
     </div>
   );
 };
