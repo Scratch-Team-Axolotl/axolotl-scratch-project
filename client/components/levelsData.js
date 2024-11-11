@@ -39,6 +39,8 @@ export const levels = [
   {
     level: 5,
     images: [
+      '/assets/manai.png',
+      '/assets/manreal.png',
       // paths to the static image files
     ],
     aiIndex: 0, // change to the index of the correct answer in the images array

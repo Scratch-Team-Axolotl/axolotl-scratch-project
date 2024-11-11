@@ -4,7 +4,7 @@ const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {
-    fetch('/api/scores/leaderboard')
+    fetch('/api/score/leaderboard')
       .then((response) => response.json())
       .then((data) => setLeaderboard(data));
   }, []);
