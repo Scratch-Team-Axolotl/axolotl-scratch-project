@@ -1,41 +1,76 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Leaderboard from './Leaderboard';
+import { useNavigate } from 'react-router-dom';
+// import { endGameMsg } from './playerFB';
+// import '../../server/assets/test-stars.png';
 
-const Score = () => {
+const Score = ({ score, username }) => {
+  const navigate = useNavigate();
+
+  const endGameMsg = {
+    nice: `"Nice try, ${username} ! Take a closer look at the smaller details next time. AI-generated images often have subtle inconsistencies in textures and shadows that don’t quite match up. Keep practicing, and you’ll start to spot these differences more easily!”`,
+    good: `“Good job, ${username}! You’re picking up on some of the key differences, but a bit more practice could help you reach the next level. Try focusing on areas like facial expressions, background clarity, and lighting effects—AI sometimes struggles to make these look truly natural.”`,
+    almost: `“You’re almost there, ${username}! You’ve got a sharp eye for details, but a few differences slipped through. AI images often miss the finer nuances in realistic lighting and texture. With a bit more attention, you’ll be able to spot them all!”`,
+    incredible: `“Incredible, ${username}! You’ve got a flawless eye for detail and the instincts of a true pro! Spotting every difference with ease shows real skill—congratulations on achieving a perfect score. Keep honing that talent!”`,
+    disclaimerLose: `“Disclaimer: This advice has been carefully crafted by AI… and we’re 99% sure it’s actually helpful!” — ChatGPT`,
+    disclaimerWin: `“Disclaimer: AI-generated advice from an AI game. Who better to recognize talent than a flawless AI?” — ChatGPT`,
+  };
+
+  // Store above data properly and use fetch to bring it back for use in Score Display
+
+  const fetchPlayerData = async () => {
+    try {
+      const response = await fetch('/api/scores', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, score }),
+      });
+    } catch (error) {
+      console.error('Detailed error:', error);
+      alert('Failed to update score: ' + error.message);
+    }
+  };
+
+  fetchPlayerData();
+
   return (
-    <div className='page' id='score'>
+    <div className='score'>
       <div className='score-display'>
-        <h1>GAME OVER</h1>
-        <br />
-        <h3>5.aaa/10</h3>
+        <h1 className='game-over'>GAME OVER</h1>
+        <div className='score-content'>
+          {/* <img src='../../server/assets/test-stars.png' alt='' /> */}
+          <h2 className='player-score'>{`Score: ${score} of 10`}</h2>
+          <div className='player-feedback'>
+            <p>
+              {score <= 3
+                ? endGameMsg.nice
+                : score <= 6
+                ? endGameMsg.good
+                : score <= 9
+                ? endGameMsg.almost
+                : score === 10
+                ? endGameMsg.incredible
+                : null}
+            </p>
+            <p className='disclaimer'>
+              {score === 10
+                ? endGameMsg.disclaimerWin
+                : endGameMsg.disclaimerLose}
+            </p>
+          </div>
+        </div>
+
+        <button
+          className='game-btn'
+          onClick={() => (window.location.href = '/intro')}
+        >
+          New Game
+        </button>
+        <button className='leader-btn' onClick={() => navigate('/leaderboard')}>
+          Leaderboard
+        </button>
       </div>
-      <div className='advice'>
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </h1>
-      </div>
-      <div>
-        {/* testing the image link */}
-        <img src='https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/0ded463a-9665-4578-b0a0-b5195ce9835c/original=true,quality=90/73BA569C1C9DEE1F5B730314A1BA1488B998C9DA1EC171D7EBB9F0F506887B76.jpeg' />
-      </div>
-      {/* added the leaderboard component */}
-      <Leaderboard />
-      {/* Modified the restart button a bit */}
-      <button
-        // added the button for OAuth
-        onClick={() => (window.location.href = '/intro')}
-        style={{ fontSize: '20px', padding: '10px 20px', marginTop: '15px' }}
-        className='restart-button'
-      >
-        Start Over
-      </button>
     </div>
   );
 };

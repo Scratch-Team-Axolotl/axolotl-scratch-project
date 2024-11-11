@@ -39,6 +39,8 @@ export const levels = [
   {
     level: 5,
     images: [
+      '/assets/manai.png',
+      '/assets/manreal.png',
       // paths to the static image files
     ],
     aiIndex: 0, // change to the index of the correct answer in the images array
@@ -46,13 +48,17 @@ export const levels = [
   {
     level: 6,
     images: [
+      '/assets/MtFuji_2_real.png',
+      '/assets/MtFuji_1_ai.png',
       // paths to the static image files
     ],
-    aiIndex: 0, // change to the index of the correct answer in the images array
+    aiIndex: 1, // change to the index of the correct answer in the images array
   },
   {
     level: 7,
     images: [
+      '/assets/frog_1_ai.png',
+      '/assets/frog_2_real.png',
       // paths to the static image files
     ],
     aiIndex: 0, // change to the index of the correct answer in the images array
@@ -60,22 +66,28 @@ export const levels = [
   {
     level: 8,
     images: [
+      '/assets/northern_lights_2_real.png',
+      '/assets/northern_lights_1_ai.png',
       // paths to the static image files
     ],
-    aiIndex: 0, // change to the index of the correct answer in the images array
+    aiIndex: 1, // change to the index of the correct answer in the images array
   },
   {
     level: 9,
     images: [
+      '/assets/egyptian_papyrus_1_real.jpg',
+      '/assets/egyptian_papyrus_2_ai.jpg',
       // paths to the static image files
     ],
-    aiIndex: 0, // change to the index of the correct answer in the images array
+    aiIndex: 1, // change to the index of the correct answer in the images array
   },
   {
     level: 10,
     images: [
+      '/assets/hongkong_1_real.png',
+      '/assets/hongkong_2_ai.png',
       // paths to the static image files
     ],
-    aiIndex: 0, // change to the index of the correct answer in the images array
+    aiIndex: 1, // change to the index of the correct answer in the images array
   },
 ];
