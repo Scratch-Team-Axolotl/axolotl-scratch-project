@@ -1,3 +1,4 @@
+import { div } from 'framer-motion/client';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { FaTimes, FaBars } from 'react-icons/fa'; // can also use the 'x' and hamburger icons from the React Icons library
@@ -12,6 +13,9 @@ const Navbar = ({ handleSidebarBtn, isNavOpen }) => {
         <h1 className='close-btn' to='#' onClick={handleSidebarBtn}>
           X
         </h1>
+        <h2 className='nav-title' onClick={() => navigate(`/`)}>
+          Home
+        </h2>
         {gameLevels.map((lvl) => {
           return (
             <h2 className='nav-title' onClick={() => navigate(`/level${lvl}`)}>

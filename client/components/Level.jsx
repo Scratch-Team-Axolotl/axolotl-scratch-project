@@ -23,7 +23,6 @@ const Level = ({ levelNumber, score, updateScore }) => {
   const handleImageClick = (index) => {
     // make sure the user has not already guessed
     // (don't want multiple guess attempts in one level)
-    // console.log("Hi, I'm inside handleClickImg");
     if (!hasGuessed) {
       setHasGuessed(true);
       // handling giving the users feedback on their guess
@@ -33,6 +32,7 @@ const Level = ({ levelNumber, score, updateScore }) => {
           return prevScore + 1;
         });
       } else {
+        setFeedback('Incorrect');
       }
     }
   };
