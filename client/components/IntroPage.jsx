@@ -14,6 +14,38 @@ const IntroPage = () => {
   const tipString =
     'Investigate both of the picture examples below and try to look for a pattern to help you. Do you notice anything that could help you differentiate between the two? ';
 
+  // added the handleStartGame function to start the game
+  const handleStartGame = async (e) => {
+    e.preventDefault();
+
+    if (!username.trim()) {
+      alert('Please enter a valid name!');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/addingPlayerName', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username: username.trim() }),
+        credentials: 'include', // include cookies in the request
+      });
+
+      const data = await response.json();
+
+      if (data.addingNameSuccess) {
+        navigate('/level1');
+      } else {
+        throw new Error(data.error || 'Server response failed');
+      }
+    } catch (error) {
+      console.error('Detailed error:', error);
+      alert('Failed to start game: ' + error.message);
+    }
+  };
+
   //temporary styling
   //added two p tags for the instructions and the tips
   //added two images
@@ -67,11 +99,23 @@ const IntroPage = () => {
       />
       <div>
         <button
-          onClick={() => navigate('/level1')}
-          //want to save username to leaderboard when we click continue
-          style={{ fontSize: '20px', padding: '10px 20px', marginTop: '15px' }}
+          // changed the button to start the game
+          onClick={handleStartGame}
+          style={{
+            fontSize: '20px',
+            padding: '10px 20px',
+            marginTop: '15px',
+            marginRight: '10px',
+          }}
         >
           Start Game
+        </button>
+        <button
+          // added the button for OAuth
+          onClick={() => (window.location.href = '/api/auth/github')}
+          style={{ fontSize: '20px', padding: '10px 20px', marginTop: '15px' }}
+        >
+          Sign in with GitHub
         </button>
       </div>
       <img
