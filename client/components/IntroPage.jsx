@@ -60,7 +60,7 @@ const IntroPage = () => {
         textAlign: 'center',
       }}
     >
-      <h1>Welcome to AImongUs!</h1>
+      <h1>Welcome to AImongus!!</h1>
       <p
         //added two p tags for the instructions and the tips
         style={{
