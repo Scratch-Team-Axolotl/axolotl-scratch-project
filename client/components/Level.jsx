@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { levels } from './levelsData';
 import Navbar from './Navbar';
+import { useUnmountEffect } from 'framer-motion';
 
 const Level = ({ levelNumber, score, updateScore }) => {
   const navigate = useNavigate();
@@ -14,6 +15,11 @@ const Level = ({ levelNumber, score, updateScore }) => {
   const [feedback, setFeedback] = React.useState('');
   // to track if the user has guessed:
   const [hasGuessed, setHasGuessed] = useState(false);
+
+  useEffect(() => {
+    setFeedback('');
+    setHasGuessed(false);
+  }, [levelNumber]);
 
   // handles the opening & closing of the sidebar
   const handleSidebarBtn = () => {
@@ -33,6 +39,7 @@ const Level = ({ levelNumber, score, updateScore }) => {
           return prevScore + 1;
         });
       } else {
+        setFeedback(`Sorry! That photo is real.`);
       }
     }
   };
