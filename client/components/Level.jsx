@@ -60,8 +60,19 @@ const Level = ({ levelNumber, score, updateScore }) => {
     <div className='level'>
       <Navbar handleSidebarBtn={handleSidebarBtn} isNavOpen={isNavOpen} />
       <div className='level-content'>
-        <h1 className='level-title'>Level {levelNumber}</h1>
-        <p className='score-update'>Score: {score}</p>
+        <div
+          className='titlescore-container'
+          style={{
+            border: '3px solid black',
+            borderRadius: '5px',
+            padding: '20px',
+          }}
+        >
+          <h1 className='level-title'>Level {levelNumber}</h1>
+          <p className='score-update' style={{ marginTop: '10px' }}>
+            Score: {score}
+          </p>
+        </div>
         <p>{feedback}</p>
         <div style={{ display: 'flex', gap: '10px' }}>
           {images.map((image, index) => (

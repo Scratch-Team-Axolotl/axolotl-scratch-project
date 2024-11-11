@@ -12,12 +12,12 @@ body {
   letter-spacing: 0.1rem;
 }
 
-.headers {
+body h1 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: lighter;
 }
 
-.paragraphs {
+body p {
   font-family: monospace;
 }
 
@@ -28,18 +28,18 @@ body {
   width: auto;
 }
 
-.start-btn {
+.intro-start-btn {
   border: 3px solid greenyellow;
   border-radius: 5px;
   background-color: black;
   color: greenyellow;
-  padding: 10px 20px;
+  padding: 15px 50px;
   margin-top: 10px;
-  font-size: 1rem;
+  font-size: 1.9rem;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.start-btn:hover {
+.intro-start-btn:hover {
   cursor: pointer;
   border-color: #ff68e8;
   background-color: black;
@@ -266,7 +266,6 @@ body {
   max-width: 90%;
   padding: 2rem;
   gap: 1rem;
-  /* margin: 0; */
   position: absolute;
   top: 10%;
   left: 15%;
@@ -277,17 +276,19 @@ body {
 }
 
 .player-score {
-  /* padding: 10%; */
-  margin: 5% 10% 0 10%;
+  margin: 5% 10% 0 5%;
+}
+
+.score-msg p {
+  font-size: 1.1rem;
 }
 
 .player-feedbck {
   padding: 3rem 0;
-  font-size: 3rem;
 }
 
 .disclaimer {
-  padding: 1rem 0;
+  padding: 2rem 0;
   font-size: 1rem;
   font-family: fantasy;
 }
