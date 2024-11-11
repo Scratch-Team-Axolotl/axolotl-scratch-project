@@ -11,13 +11,14 @@ export const levels = [
   },
   {
     level: 2,
-    images: [
-      '/assets/Geisha_real.jpg',
-      '/assets/Geisha_ai_1.webp',
-      // paths to the static image files
+    type: 'video',
+    sources: [
+      'https://videos.pexels.com/video-files/10267918/10267918-hd_1080_1920_24fps.mp4',
+      'https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/a7b05555-9dbd-4e31-9b72-3cf21a87320e/transcode=true,original=true,quality=90/AnimateDiff_00019.webm',
     ],
-    aiIndex: 1, // change to the index of the correct answer in the images array
+    aiIndex: 1,
   },
+
   {
     level: 3,
     images: [
