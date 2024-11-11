@@ -1,9 +1,9 @@
-const Player = require('../models/playersModel');
+const Player = require('../models/playerModel');
 
-const scoresController = {};
-scoresController.uploadScore = async (req, res, next) => {
+const scoreController = {};
+scoreController.uploadScore = async (req, res, next) => {
   try {
-    // make sure to send the username and score in the request body
+    // reminder to frontend api: make sure to send the username and score in the request body
     const { username, score } = req.body;
 
     // Update player if exists, create if doesn't
@@ -27,7 +27,7 @@ scoresController.uploadScore = async (req, res, next) => {
   }
 };
 
-scoresController.getTopScores = async (req, res, next) => {
+scoreController.getTopScores = async (req, res, next) => {
   try {
     const leaderboard = await Player.find()
       .sort({ score: -1 })
@@ -44,4 +44,4 @@ scoresController.getTopScores = async (req, res, next) => {
   }
 };
 
-module.exports = scoresController;
+module.exports = scoreController;
