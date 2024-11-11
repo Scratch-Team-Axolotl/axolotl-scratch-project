@@ -7,7 +7,7 @@ const Score = ({ score, username }) => {
   const navigate = useNavigate();
 
   const endGameMsg = {
-    nice: `"Nice try, ${username} ! Take a closer look at the smaller details next time. AI-generated images often have subtle inconsistencies in textures and shadows that don’t quite match up. Keep practicing, and you’ll start to spot these differences more easily!”`,
+    nice: `"Nice try, ${username} ! Take a closer look at the smaller details next time. AI-generated images often have subtle inconsistencies in textures, texts and shadows that don’t quite match up. Keep practicing, and you’ll start to spot these differences more easily!”`,
     good: `“Good job, ${username}! You’re picking up on some of the key differences, but a bit more practice could help you reach the next level. Try focusing on areas like facial expressions, background clarity, and lighting effects—AI sometimes struggles to make these look truly natural.”`,
     almost: `“You’re almost there, ${username}! You’ve got a sharp eye for details, but a few differences slipped through. AI images often miss the finer nuances in realistic lighting and texture. With a bit more attention, you’ll be able to spot them all!”`,
     incredible: `“Incredible, ${username}! You’ve got a flawless eye for detail and the instincts of a true pro! Spotting every difference with ease shows real skill—congratulations on achieving a perfect score. Keep honing that talent!”`,

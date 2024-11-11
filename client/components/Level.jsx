@@ -10,8 +10,11 @@ const Level = ({ levelNumber, score, updateScore }) => {
   // navbar button state
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  // loads the images for the current level and the index of the correct answer:
-  const { images, aiIndex } = levels[levelNumber - 1];
+  // loads the level data for the current level:
+  const levelData = levels[levelNumber - 1];
+  const isVideo = levelData.type === 'video';
+  const mediaFiles = isVideo ? levelData.sources : levelData.images;
+  const { aiIndex } = levelData;
   // to send the users a message if they're right or wrong:
   const [feedback, setFeedback] = React.useState('');
   // to track if the user has guessed:
@@ -60,30 +63,32 @@ const Level = ({ levelNumber, score, updateScore }) => {
     <div className='level'>
       <Navbar handleSidebarBtn={handleSidebarBtn} isNavOpen={isNavOpen} />
       <div className='level-content'>
-        <div
-          className='titlescore-container'
-          style={{
-            border: '3px solid black',
-            borderRadius: '5px',
-            padding: '20px',
-          }}
-        >
-          <h1 className='level-title'>Level {levelNumber}</h1>
-          <p className='score-update' style={{ marginTop: '10px' }}>
-            Score: {score}
-          </p>
-        </div>
+        <h1 className='level-title'>Level {levelNumber}</h1>
+        <p className='score-update'>Score: {score}</p>
         <p>{feedback}</p>
         <div style={{ display: 'flex', gap: '10px' }}>
-          {images.map((image, index) => (
-            <img
-              className='pics'
-              key={index}
-              src={image}
-              /*style={{ width: '200px', height: 'auto' }}*/
-              onClick={() => handleImageClick(index)}
-            />
-          ))}
+          {mediaFiles.map((media, index) =>
+            isVideo ? (
+              <video
+                key={index}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className='pics'
+                onClick={() => handleImageClick(index)}
+              >
+                <source src={media} type='video/mp4' />
+              </video>
+            ) : (
+              <img
+                className='pics'
+                key={index}
+                src={media}
+                onClick={() => handleImageClick(index)}
+              />
+            )
+          )}
         </div>
         {hasGuessed && (
           <button className='next-btn' onClick={handleNextLevel}>
