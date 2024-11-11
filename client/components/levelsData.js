@@ -74,12 +74,12 @@ export const levels = [
   },
   {
     level: 9,
-    images: [
-      '/assets/kids_doing_art_1_real.jpg',
-      '/assets/kids_doing_art_2_ai.jpg',
-      // paths to the static image files
+    type: 'video',
+    sources: [
+      'https://videos.pexels.com/video-files/8784040/8784040-hd_1080_1920_24fps.mp4',
+      'https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/8f40d070-1bae-47ad-a29d-22e6e83cb249/transcode=true,original=true,quality=90/b92aad3c8e02424c84e28d082603ee3f.webm',
     ],
-    aiIndex: 1, // change to the index of the correct answer in the images array
+    aiIndex: 1,
   },
   {
     level: 10,
