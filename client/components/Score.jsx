@@ -40,7 +40,7 @@ const Score = ({ score, username }) => {
         <div className='score-content'>
           {/* <img src='../../server/assets/test-stars.png' alt='' /> */}
           <h2 className='player-score'>{`Score: ${score} of 10`}</h2>
-          <div>
+          <div className='score-msg'>
             <p className='player-feedback'>
               {score <= 3
                 ? endGameMsg.nice
