@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LandingImage1 from '../../server/assets/ai-axolotl.webp';
-import LandingImage2 from '../../server/assets/ai-goblin-shark.png';
-import LandingImage3 from '../../server/assets/ai-pink-fairy-armadillo.png';
-import LandingImage4 from '../../server/assets/ai-red-lip-batfish.png';
+// import LandingImage1 from '../../server/assets/ai-axolotl.webp';
+// import LandingImage2 from '../../server/assets/ai-goblin-shark.png';
+// import LandingImage3 from '../../server/assets/ai-pink-fairy-armadillo.png';
+// import LandingImage4 from '../../server/assets/ai-red-lip-batfish.png';
 import LandingVideo1 from '../../server/assets/landing_page_video_1.webm';
 import LandingVideo2 from '../../server/assets/landing_page_video_2.webm';
 
@@ -65,6 +65,7 @@ const LandingPage = () => {
     /> */}
 
       <video
+        style={{ border: '3px solid black', borderRadius: '10px' }}
         className='intro-vid'
         ref={videoRef}
         autoPlay
@@ -75,7 +76,7 @@ const LandingPage = () => {
         <source src={videoLinks[currentVideoIndex]} type='video/webm' />
       </video>
 
-      <button className='start-btn' onClick={() => navigate('/intro')}>
+      <button className='intro-start-btn' onClick={() => navigate('/intro')}>
         Start
       </button>
     </div>
