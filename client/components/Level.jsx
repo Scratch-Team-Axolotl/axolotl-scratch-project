@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { levels } from './levelsData';
 import Navbar from './Navbar';
 import { useUnmountEffect } from 'framer-motion';
+import './LevelStyling.css';
 
 const Level = ({ levelNumber, score, updateScore }) => {
   const navigate = useNavigate();
@@ -59,24 +60,22 @@ const Level = ({ levelNumber, score, updateScore }) => {
     <div className='level'>
       <Navbar handleSidebarBtn={handleSidebarBtn} isNavOpen={isNavOpen} />
       <div className='level-content'>
-        <h1>Level {levelNumber}</h1>
-        <p>Score: {score}</p>
+        <h1 className='level-title'>Level {levelNumber}</h1>
+        <p className='score-update'>Score: {score}</p>
         <p>{feedback}</p>
         <div style={{ display: 'flex', gap: '10px' }}>
           {images.map((image, index) => (
             <img
+              className='pics'
               key={index}
               src={image}
-              style={{ width: '200px', height: 'auto' }}
+              /*style={{ width: '200px', height: 'auto' }}*/
               onClick={() => handleImageClick(index)}
             />
           ))}
         </div>
         {hasGuessed && (
-          <button
-            onClick={handleNextLevel}
-            style={{ padding: '10px 20px', marginTop: '20px' }}
-          >
+          <button className='next-btn' onClick={handleNextLevel}>
             Next Level
           </button>
         )}
