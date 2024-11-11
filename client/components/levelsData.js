@@ -75,8 +75,8 @@ export const levels = [
   {
     level: 9,
     images: [
-      '/assets/egyptian_papyrus_1_real.jpg',
-      '/assets/egyptian_papyrus_2_ai.jpg',
+      '/assets/kids_doing_art_1_real.jpg',
+      '/assets/kids_doing_art_2_ai.jpg',
       // paths to the static image files
     ],
     aiIndex: 1, // change to the index of the correct answer in the images array

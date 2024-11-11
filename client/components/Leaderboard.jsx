@@ -11,7 +11,9 @@ const Leaderboard = () => {
 
   return (
     <div className='leaderboard'>
-      <h2>Leaderboard</h2>
+      <div>
+        <h2>Leaderboard</h2>
+      </div>
       <table>
         <thead>
           <tr>
@@ -32,6 +34,12 @@ const Leaderboard = () => {
           ))}
         </tbody>
       </table>
+      {/* <video autoPlay loop muted playsInline>
+        <source
+          src='https://videos.pexels.com/video-files/8784040/8784040-hd_1080_1920_24fps.mp4'
+          type='video/webm'
+        />
+      </video> */}
       <style>
         {`
             .leaderboard {
@@ -41,6 +49,9 @@ const Leaderboard = () => {
               border-radius: 8px;
               background-color: #f9f9f9;
             }
+            h2 {
+            text-align: center;
+            }
             table {
               width: 100%;
               border-collapse: collapse;
@@ -48,11 +59,17 @@ const Leaderboard = () => {
             th,
             td {
               padding: 10px;
-              text-align: left;
+              text-align: center;
               border-bottom: 1px solid #ddd;
             }
             `}
       </style>
+      <button
+        className='game-btn'
+        onClick={() => (window.location.href = '/intro')}
+      >
+        New Game
+      </button>
     </div>
   );
 };
