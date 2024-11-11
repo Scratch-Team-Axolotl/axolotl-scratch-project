@@ -16,7 +16,6 @@ const Score = ({ score, username }) => {
   };
 
   // Store above data properly and use fetch to bring it back for use in Score Display
-
   const fetchPlayerData = async () => {
     try {
       const response = await fetch('/api/scores', {
@@ -41,8 +40,8 @@ const Score = ({ score, username }) => {
         <div className='score-content'>
           {/* <img src='../../server/assets/test-stars.png' alt='' /> */}
           <h2 className='player-score'>{`Score: ${score} of 10`}</h2>
-          <div className='player-feedback'>
-            <p>
+          <div>
+            <p className='player-feedback'>
               {score <= 3
                 ? endGameMsg.nice
                 : score <= 6

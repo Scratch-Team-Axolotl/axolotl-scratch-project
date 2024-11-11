@@ -47,6 +47,7 @@ const IntroPage = ({ username, setUsername }) => {
   //temporary styling
   return (
     <div
+      className='intro-container'
       style={{
         border: '2px solid black',
         padding: '20px',
@@ -58,8 +59,9 @@ const IntroPage = ({ username, setUsername }) => {
         textAlign: 'center',
       }}
     >
-      <h1>Welcome to AImongus!!</h1>
+      <h1 className='headers'>Welcome to AImongus!!</h1>
       <p
+        className='paragraphs'
         //added two p tags for the instructions and the tips
         style={{
           fontSize: '20px',
@@ -71,6 +73,7 @@ const IntroPage = ({ username, setUsername }) => {
         <strong>Instructions:</strong> {instructionString}
       </p>
       <p
+        className='paragraphs'
         style={{
           fontSize: '20px',
           padding: '10px 20px',
@@ -95,6 +98,7 @@ const IntroPage = ({ username, setUsername }) => {
       />
       <div>
         <button
+          className='start-button'
           // changed the button to start the game
           onClick={handleStartGame}
           style={{
@@ -107,9 +111,10 @@ const IntroPage = ({ username, setUsername }) => {
           Start Game
         </button>
         <button
+          className='github-button'
           // added the button for OAuth
           onClick={() => (window.location.href = '/api/auth/github')}
-          style={{ fontSize: '20px', padding: '10px 20px', marginTop: '15px' }}
+          // style={{ fontSize: '20px', padding: '10px 20px', marginTop: '15px' }}
         >
           Sign in with GitHub
         </button>
@@ -117,19 +122,11 @@ const IntroPage = ({ username, setUsername }) => {
       <img
         //added two images
         src={fakeTitanic}
-        style={{
-          width: '500px',
-          height: '380px',
-          marginTop: '15px',
-        }}
+        style={{ width: '500px', height: '380px', marginTop: '15px' }}
       />
       <img
         src={realTitanic}
-        style={{
-          width: '500px',
-          height: '380px',
-          marginTop: '15px',
-        }}
+        style={{ width: '500px', height: '380px', marginTop: '15px' }}
       />
     </div>
   );

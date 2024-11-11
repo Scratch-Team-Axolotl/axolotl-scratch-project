@@ -8,8 +8,80 @@
 body {
   min-height: 100vh; /* sets body's height to the entire viewport's height */
   width: 100%; /* sets width to full parent element's (body) width; if we used vw a horizontal scroll bar will appear when height expands and requires a vertical scroll bar. This is because the vertical scroll bar takes up an additional 10px of width. */
+  background-color: rgb(224, 224, 224);
+  letter-spacing: 0.1rem;
 }
 
+.headers {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: lighter;
+}
+
+.paragraphs {
+  font-family: monospace;
+}
+
+/* ------- LANDING PAGE ------- */
+
+.intro-vid {
+  height: 80%;
+  width: auto;
+}
+
+.start-btn {
+  border: 3px solid greenyellow;
+  border-radius: 5px;
+  background-color: black;
+  color: greenyellow;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.start-btn:hover {
+  cursor: pointer;
+  border-color: #ff68e8;
+  background-color: black;
+  color: #ff68e8;
+}
+/* ------- INTRO PAGE ------- */
+.github-button {
+  display: inline-block; /* Stack with other elements */
+  padding: 10px 20px; /* Add some padding */
+  color: #ffffff; /* White text */
+  background-color: #24292e; /* GitHub dark gray */
+  border: none; /* No border */
+  border-radius: 5px; /* Slightly rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+  margin-top: 10px; /* Space above and below */
+}
+.github-button:hover {
+  cursor: pointer;
+}
+
+.start-button {
+  display: inline-block; /* Stack with other elements */
+  padding: 10px 20px; /* Add some padding */
+  color: greenyellow; /* White text */
+  background-color: black; /* GitHub dark gray */
+  border: 3px solid greenyellow; /* No border */
+  border-radius: 5px; /* Slightly rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; /* Font size */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+  margin: 10px 0; /* Space above and below */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.start-button:hover {
+  cursor: pointer;
+  color: #ff68e8;
+  border-color: #ff68e8;
+}
 /* ------- LEVEL PAGES ------- */
 .level {
   display: flex;
@@ -18,6 +90,23 @@ body {
   align-items: flex-start;
   height: 100%;
   width: 100%;
+}
+
+.next-btn {
+  border: solid 3px;
+  border-radius: 10px;
+  background-color: black;
+  color: greenyellow;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1rem;
+}
+
+.next-btn:hover {
+  cursor: pointer;
+  background-color: black;
+  color: #ff68e8;
 }
 
 .navbar {
@@ -35,6 +124,19 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-left: -33%;
+}
+
+.titlescore-container {
+  border: 3px solid black;
+}
+
+.level-title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.score-update {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -62,7 +164,7 @@ body {
   text-decoration: none;
   font-size: 30px;
   text-align: center;
-  color: white;
+  color: greenyellow;
   display: block;
   transition: 0.3s;
 }
@@ -70,7 +172,7 @@ body {
 /* When you mouse over the navigation links, change their color */
 .nav-title:hover {
   cursor: pointer;
-  color: #b48cf3;
+  color: #ff68e8;
 }
 
 /* Position and style the close button (top right corner) */
@@ -80,11 +182,11 @@ body {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-  color: white;
+  color: greenyellow;
 }
 
 .close-btn:hover {
-  color: #b48cf3;
+  color: #ff68e8;
   cursor: pointer;
 }
 
@@ -93,7 +195,7 @@ body {
   font-size: 20px;
   cursor: pointer;
   background-color: #111;
-  color: white;
+  color: greenyellow;
   padding: 10px 15px;
   border: none;
   /* sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). */
@@ -104,7 +206,8 @@ body {
 }
 
 .open-btn:hover {
-  color: #b48cf3;
+  cursor: pointer;
+  color: #ff68e8;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -129,9 +232,15 @@ body {
 .score-display {
   border: solid 5px;
   border-radius: 20px;
-  padding: 15%;
+  /* background-color: rgb(230, 230, 230); */
+  /* background-color: blue; */
+  width: auto;
+  height: 50%;
+  padding: 15rem 20rem;
   margin: 5% 10% 0 10%;
   position: relative;
+  display: flex;
+  max-width: 50%;
   /* background-color: black; */
   /* color: white; */
 }
@@ -139,7 +248,7 @@ body {
 .game-over {
   border: solid 3px;
   border-radius: 10px;
-  background-color: white;
+  background-color: greenyellow;
   color: black;
   padding: 2%;
   position: absolute;
@@ -150,19 +259,21 @@ body {
 }
 
 .score-content {
-  /* border: solid 3px; */
-  /* border-radius: 10px; */
-  /* background-color: white; */
-  padding: 2%;
-  position: absolute;
-  top: 10%;
-  bottom: 10%;
-  left: 15%;
-  right: 15%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  max-width: 90%;
+  padding: 2rem;
+  gap: 1rem;
+  /* margin: 0; */
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  right: 15%;
+
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .player-score {
@@ -170,19 +281,22 @@ body {
   margin: 5% 10% 0 10%;
 }
 
-.player-feedback p {
-  padding: 8% 0;
+.player-feedbck {
+  padding: 3rem 0;
+  font-size: 3rem;
 }
 
 .disclaimer {
-  font-size: 0.75rem;
+  padding: 1rem 0;
+  font-size: 1rem;
+  font-family: fantasy;
 }
 
 .game-btn {
   border: solid 3px;
   border-radius: 10px;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: greenyellow;
   padding: 3%;
   position: absolute;
   bottom: -5%;
@@ -194,14 +308,14 @@ body {
 .game-btn:hover {
   cursor: pointer;
   background-color: black;
-  color: greenyellow;
+  color: #ff68e8;
 }
 
 .leader-btn {
   border: solid 3px;
   border-radius: 10px;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: greenyellow;
   padding: 3%;
   position: absolute;
   bottom: -5%;
@@ -213,7 +327,7 @@ body {
 .leader-btn:hover {
   cursor: pointer;
   background-color: black;
-  color: greenyellow;
+  color: #ff68e8;
 }
 
 /* ------- [File/Component] STYLING ------- */
