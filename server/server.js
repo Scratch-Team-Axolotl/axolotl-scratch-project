@@ -24,7 +24,11 @@ mongoose
 
 // CORS stuff
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  const allowedOrigins = ['http://localhost:3000', 'http://localhost:8080'];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header(
     'Access-Control-Allow-Headers',
@@ -37,26 +41,22 @@ app.use((req, res, next) => {
   next();
 });
 
+// use global middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Debug middleware
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.url}`, 'Body:', req.body);
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log(`${req.method} ${req.url}`, 'Body:', req.body);
+//   next();
+// });
 
 // Mount API routes
 app.use('/api', apiRouter);
 
 // Serve static image files
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
-
-// // Verify authentication for /level1
-// app.get('/api/check-auth', sessionController.isLoggedIn, (req, res) => {
-//   return res.status(200).json({ authenticated: true });
-// });
 
 // Static file serving
 app.use(express.static(path.join(__dirname, '../dist')));
