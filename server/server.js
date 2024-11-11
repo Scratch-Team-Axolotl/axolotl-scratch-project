@@ -50,6 +50,9 @@ app.use((req, res, next) => {
 // Mount API routes
 app.use('/api', apiRouter);
 
+// Serve static image files
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
 // // Verify authentication for /level1
 // app.get('/api/check-auth', sessionController.isLoggedIn, (req, res) => {
 //   return res.status(200).json({ authenticated: true });

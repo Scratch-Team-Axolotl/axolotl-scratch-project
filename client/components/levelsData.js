@@ -2,6 +2,8 @@ export const levels = [
   {
     level: 1,
     images: [
+      '/assets/titantic_1_ai.png',
+      '/assets/titantic_2_real.png',
       // paths to the static image files here (4 images)
       // must edit server file to add assets route so we can access images
     ],
@@ -10,20 +12,26 @@ export const levels = [
   {
     level: 2,
     images: [
+      '/assets/Geisha_real.jpg',
+      '/assets/Geisha_ai_1.webp',
       // paths to the static image files
     ],
-    aiIndex: 0, // change to the index of the correct answer in the images array
+    aiIndex: 1, // change to the index of the correct answer in the images array
   },
   {
     level: 3,
     images: [
+      '/assets/launch_1_real.jpg',
+      '/assets/launch_2_ai.jpg',
       // paths to the static image files
     ],
-    aiIndex: 0, // change to the index of the correct answer in the images array
+    aiIndex: 1, // change to the index of the correct answer in the images array
   },
   {
     level: 4,
     images: [
+      '/assets/Pangolin_1_ai.jpg',
+      '/assets/Pangolin_2_real.jpg',
       // paths to the static image files
     ],
     aiIndex: 0, // change to the index of the correct answer in the images array
