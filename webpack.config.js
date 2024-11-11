@@ -38,12 +38,18 @@ module.exports = {
     ],
   },
   devServer: {
+    port: 3000,
     static: {
       directory: path.resolve(__dirname, 'dist'),
     },
-    compress: true,
-    port: 8080,
+    proxy: [
+      {
+        context: ['/api', '/callback'],
+        target: 'http://localhost:8080',
+      },
+    ],
     historyApiFallback: true,
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
