@@ -1,4 +1,3 @@
-// webpack.config.js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -41,15 +40,27 @@ module.exports = {
     port: 3000,
     static: {
       directory: path.resolve(__dirname, 'dist'),
+      watch: true,
     },
     proxy: [
       {
-        context: ['/api', '/callback'],
+        context: ['/**'],
         target: 'http://localhost:8080',
+        changeOrigin: true,
+        secure: false,
       },
     ],
     historyApiFallback: true,
     hot: true,
+    watchFiles: {
+      paths: ['client/**/*'],
+      options: {
+        usePolling: true,
+      },
+    },
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({

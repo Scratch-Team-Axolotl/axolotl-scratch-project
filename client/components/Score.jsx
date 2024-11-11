@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+// import { endGameMsg } from './playerFB';
 // import '../../server/assets/test-stars.png';
 
 const Score = () => {
@@ -55,7 +56,10 @@ const Score = () => {
           </div>
         </div>
 
-        <button className='game-btn' onClick={() => navigate('/level1')}>
+        <button
+          className='game-btn'
+          onClick={() => (window.location.href = '/intro')}
+        >
           New Game
         </button>
         <button className='leader-btn' onClick={() => navigate('/leaderboard')}>
