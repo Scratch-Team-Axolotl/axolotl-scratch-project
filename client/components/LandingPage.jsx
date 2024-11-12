@@ -15,6 +15,8 @@ const videoLinks = [
   'https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/a53b958b-f81e-4251-92a8-a06e51a02743/transcode=true,original=true,quality=90/24_11_08_091335_00001.webm',
   'https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/f9ca8e9a-2119-4a86-8041-c4e370e36706/transcode=true,original=true,quality=90/24_11_07_054107_00001.webm',
   'https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/acd25949-174a-4162-900c-cc720f863650/transcode=true,original=true,quality=90/24_11_06_140209_00001.webm',
+  'https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/04f2954c-06ec-43d2-8cc7-8b2b793d34a1/transcode=true,original=true,quality=90/24_11_10_162054_00001.webm',
+  'https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/4e0e38a3-bf69-4db0-b65d-352236b5f392/transcode=true,original=true,quality=90/24_11_08_091517_00001.webm',
   'https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/84cab29e-2b93-4e8e-8d76-44cc902f29a5/transcode=true,original=true,quality=90/24_11_06_050114_00001.webm',
   'https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/f2c56456-17af-45a6-896e-96dd0eef7490/transcode=true,original=true,quality=90/24_11_06_162143_00001.webm',
   'https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/afb55a80-cfa6-48f6-b9db-f22bf29641c4/transcode=true,original=true,quality=90/24_11_08_160650_00001.webm',
