@@ -22,7 +22,6 @@ body p {
 }
 
 /* ------- LANDING PAGE ------- */
-
 .intro-vid {
   height: 80%;
   width: auto;
@@ -331,4 +330,44 @@ body p {
   color: #ff68e8;
 }
 
-/* ------- [File/Component] STYLING ------- */
+/* ------- LEADERBOARD STYLING ------- */
+.leaderboard {
+  margin: 20px;
+  padding: 20 px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+h2 {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* .leaderboard-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+} */
+
+.leaderboard-game-btn {
+  border: 3px solid greenyellow;
+  border-radius: 5px;
+  background-color: black;
+  color: greenyellow;
+  padding: 15px 50px;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
